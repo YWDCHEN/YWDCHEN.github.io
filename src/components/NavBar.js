@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../assets/img/logo.svg';
-import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"; 
+import { 
+ faGithub, 
+ faLinkedin, 
+} from "@fortawesome/free-brands-svg-icons"; 
+
 import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
@@ -32,6 +36,22 @@ export const NavBar = () => {
     setActiveLink(value);
   }
 
+  const socials = [ 
+    { 
+      icon: faEnvelope, 
+      url: "mailto: ywdchen@uwaterloo.ca", 
+    }, 
+    { 
+      icon: faGithub, 
+      url: "https://github.com/YWDCHEN", 
+    }, 
+    { 
+      icon: faLinkedin, 
+      url: "https://www.linkedin.com/in/ywdchen/", 
+    }, 
+   ]; 
+   
+
   return (
     <Router>
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
@@ -50,9 +70,15 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="#"><img src={navIcon1} alt="" /></a>
-                <a href="#"><img src={navIcon2} alt="" /></a>
-                <a href="#"><img src={navIcon3} alt="" /></a>
+                 <a href={socials[0].url}>
+                <FontAwesomeIcon icon={socials[0].icon} size="2x" />
+              </a>
+              <a href={socials[1].url}>
+                <FontAwesomeIcon icon={socials[1].icon} size="2x" />
+              </a>
+              <a href={socials[2].url}>
+                <FontAwesomeIcon icon={socials[2].icon} size="2x" />
+              </a>
               </div>
               <HashLink to='#connect'>
                 <button className="vvd"><span>Let’s Connect</span></button>
