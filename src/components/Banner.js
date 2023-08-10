@@ -59,8 +59,13 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Wendy`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["UW Engineering", "Project Manager", "Front-end Developer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h1>{`Hi! I'm Wendy Chen`} 
+                  <p/>
+                  <span className="txt-rotate" dataPeriod="1000" data-rotate='["UW Engineering", "Project Manager", "Front-end Developer" ]'>
+                    <span className="wrap">{text}</span>
+                  </span>
+                </h1>
+                  <p>I am currently in my third year student of the Bachelor of Applied Science - Management Engineering Program at the University of Waterloo. My passion lies in project management, and I am eagerly searching for a Technical Project Management Internship for Winter 2024. My proficiency in building relationships has developed through my past co-op experiences, where I had the opportunity to collaborate with cross-functional teams, stakeholders, and contractors. Alongside my academic pursuits, I have gained familiarity with project management principles and the Scrum framework through my studies in Certified Associate in Project Management and Scrum Fundamentals Certified, as well as from my previous work engagements.</p>
                   <button onClick={() => openInNewTab("https://www.linkedin.com/in/ywdchen/")}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
