@@ -34,19 +34,22 @@ export const Projects = () => {
   const works = [
     {
       title: "Product Manager",
-      company: "Nova",
+      company: "- Nova",
+      companyURL: "https://www.createwithnova.com/",
       description: "Worked with multi-functional team to release the GTM product CTV (Connected TV) and raised Ads Impressions in an average of 40% compared to previous quarter which increase client corporation by 26%" ,
       imgUrl: workImg1,
     },
     {
       title:"Process Engineer",
-      company:"Go Direct Supply Chain Solutions Inc",
+      company:"- Go Direct Supply Chain Solutions Inc",
+      companyURL: "https://www.linkedin.com/company/go-direct-supply-chain-solutions-inc/",
       description:"Established a complete KPI (Key Performance Indicator) standard system which contribute to implementation of ISO Quality System and reduced company cost by 35%",
       imgUrl: workImg2,
     },
     {
       title:"Project Manager Assistant",
-      company:"Sichuan Huadi Construction Engineering Co. Ltd.",
+      company:"- Sichuan Huadi Construction Engineering Co. Ltd.",
+      companyURL: "http://www.schuadi.com/",
       description:"Implement PMIS (Project Management Information System) for project tracking and decision approval which raise the company’s efficiency by 24% and cost by 30%",
       imgUrl: workImg3,
     },
