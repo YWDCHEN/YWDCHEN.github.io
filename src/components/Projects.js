@@ -1,8 +1,12 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
+import { WorkCard } from "./workCards";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import workImg1 from "../assets/img/work-img1.png";
+import workImg2 from "../assets/img/work-img2.png";
+import workImg3 from "../assets/img/work-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -11,36 +15,43 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Instagram Clone",
+      description: "Developed a clone of Instagram with Sign In and Out, timeline of posts, user profile and suggested users using React, JavaScript and Tailwind CSS ",
       imgUrl: projImg1,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Management Engineering Information Web",
+      description: "Gathered all relevant information about Management Science and allow user to visualized future pathway which increase the efficiency of planning and study",
       imgUrl: projImg2,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Movie Explore",
+      description: "Developed a movie exploration application with various features to enhance user experience and provide valuable information about films using React",
       imgUrl: projImg3,
     },
   ];
+
+  const works = [
+    {
+      title: "Product Manager",
+      company: "Nova",
+      description: "Worked with multi-functional team to release the GTM product CTV (Connected TV) and raised Ads Impressions in an average of 40% compared to previous quarter which increase client corporation by 26%" ,
+      imgUrl: workImg1,
+    },
+    {
+      title:"Process Engineer",
+      company:"Go Direct Supply Chain Solutions Inc",
+      description:"Established a complete KPI (Key Performance Indicator) standard system which contribute to implementation of ISO Quality System and reduced company cost by 35%",
+      imgUrl: workImg2,
+    },
+    {
+      title:"Project Manager Assistant",
+      company:"Sichuan Huadi Construction Engineering Co. Ltd.",
+      description:"Implement PMIS (Project Management Information System) for project tracking and decision approval which raise the company’s efficiency by 24% and cost by 30%",
+      imgUrl: workImg3,
+    },
+  ];
+
 
   return (
     <section className="project" id="project">
@@ -50,18 +61,15 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h2>Projects & Work Experiences </h2>
+                <p></p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                      <Nav.Link eventKey="first">Projects</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                      <Nav.Link eventKey="second">Work Experiences</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -79,11 +87,19 @@ export const Projects = () => {
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Tab.Pane eventKey="second">
+                      <Row>
+                        {
+                          works.map((work, index) => {
+                            return (
+                              <WorkCard
+                                key={index}
+                                {...work}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>

@@ -39,19 +39,24 @@ export const Skills = () => {
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Brand Identity</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>Logo Design</h5>
+                                <h5>Project Management</h5>
+                                <h6> - Scum Fundamentals Certified (SFC)</h6>
+                                <h6> - Certified Associate in Project Management (CAPM)</h6>
                             </div>
                             <div className="item">
                                 <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
+                                <h5>Communication</h5>
+                                <h6> - Clear and efficient communication across multi-functional team</h6>
+                            </div>
+                            <div className="item">
+                                <img src={meter3} alt="Image" />
+                                <h5>React/JS</h5>
+                                <h6> - Web development</h6>
+                            </div>
+                            <div className="item">
+                                <img src={meter2} alt="Image" />
+                                <h5>Python</h5>
+                                <h6> - Data structure and algorithm</h6>
                             </div>
                         </Carousel>
                     </div>
