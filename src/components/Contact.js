@@ -23,23 +23,39 @@ export const Contact = () => {
       })
   }
 
-  const handleSubmit = async (e) => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setButtonText("Sending...");
+  //   let response = await fetch("/contact", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json;charset=utf-8",
+  //     },
+  //     body: JSON.stringify(formDetails),
+  //   });
+  //   setButtonText("Send");
+  //   let result = await response.json();
+  //   setFormDetails(formInitialDetails);
+  //   if (result.code == 200) {
+  //     setStatus({ succes: true, message: 'Message sent successfully'});
+  //   } else {
+  //     setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
+  //   }
+  // };
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setButtonText("Sending...");
-    let response = await fetch("/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: 'Message sent successfully'});
-    } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
+    const config = {
+      Host : "smtp.elasticemail.com",
+      Username : "wendychen0831@gmail.com",
+      Password : "30FBA6F8BE42AB27FE0884830E986F6EA6DF",
+      To : "wendychen0831@gmail.com",
+      From : "wendychen0831@gmail.com",
+      Subject : "This is the subject",
+      Body : `Name: ${formDetails.firstName + ' ' + formDetails.lasttName}   Email:${formDetails.email}   Phone: ${formDetails.phone}   Message:${formDetails.message}`
+    };
+
+    if(window.Email) {
+      window.Email.send(config).then((message)=>alert("sent!"));
     }
   };
 
