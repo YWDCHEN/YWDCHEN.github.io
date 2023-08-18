@@ -51,7 +51,7 @@ export const Contact = () => {
       To : "wendychen0831@gmail.com",
       From : "wendychen0831@gmail.com",
       Subject : "This is the subject",
-      Body : `Name: ${formDetails.firstName + ' ' + formDetails.lasttName}   Email:${formDetails.email}   Phone: ${formDetails.phone}   Message:${formDetails.message}`
+      Body : `Name: ${formDetails.firstName + ' ' + formDetails.lastName}   Email:${formDetails.email}   Phone: ${formDetails.phone}   Message:${formDetails.message}`
     };
 
     if(window.Email) {
