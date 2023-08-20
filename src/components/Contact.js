@@ -31,7 +31,7 @@ export const Contact = () => {
       Password : "30FBA6F8BE42AB27FE0884830E986F6EA6DF",
       To : "wendychen0831@gmail.com",
       From : "wendychen0831@gmail.com",
-      Subject : "This is the subject",
+      Subject : "Wendy's Portfolio Contact Form",
       Body : `Name: ${formDetails.firstName + ' ' + formDetails.lastName}   Email:${formDetails.email}   Phone: ${formDetails.phone}   Message:${formDetails.message}`
     };
 
